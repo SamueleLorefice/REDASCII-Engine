@@ -5,8 +5,9 @@ using System.Text;
 namespace REDASCII_Engine.Graphics {
     public interface IRenderer : ISystem {
         public int TargetFPS { get; set; }
-        public void DrawBuffer();
-        public void SwapBuffer();
+        public AsciiBuffer[] Buffers { get; set; }
+        public void DrawBuffer(int bufferIndex);
+        public void SwapBuffer(int topBuffer);
 
     }
 }
