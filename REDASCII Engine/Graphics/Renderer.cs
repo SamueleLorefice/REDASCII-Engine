@@ -20,23 +20,6 @@ namespace REDASCII_Engine.Graphics {
             RenderObjects = new List<IRenderable>();
         }
 
-
-        //interop type
-        [StructLayout(LayoutKind.Sequential)]
-        public struct SMALL_RECT {
-            public UInt16 Left;
-            public UInt16 Top;
-            public UInt16 Right;
-            public UInt16 Bottom;
-        }
-
-        //interop type
-        [StructLayout(LayoutKind.Sequential)]
-        public struct COORD {
-            public UInt16 X;
-            public UInt16 Y;
-        }
-
         [DllImport("Kernel32.dll", EntryPoint = "WriteConsoleOutputW")]
         private static extern void WriteBufferOutput(IntPtr consoleOutput, char[,] data, COORD bufferSize, COORD startCoord, out SMALL_RECT WriteRegion);
 
