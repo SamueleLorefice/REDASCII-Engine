@@ -5,8 +5,8 @@ using System.Text;
 
 namespace AdvancedConsole {
     [StructLayout(LayoutKind.Sequential)]
-    public struct COORD {
-        public short X;
-        public short Y;
+    public struct CONSOLE_FONT_INFO {
+        public int nFont;
+        public COORD dwFontSize;
     }
 }

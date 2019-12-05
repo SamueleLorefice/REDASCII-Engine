@@ -5,8 +5,7 @@ using System.Text;
 
 namespace AdvancedConsole {
     [StructLayout(LayoutKind.Sequential)]
-    public struct COORD {
-        public short X;
-        public short Y;
+    public struct FOCUS_EVENT_RECORD {
+        public uint bSetFocus;
     }
 }
