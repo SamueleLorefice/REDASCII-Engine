@@ -1,7 +1,7 @@
 ﻿namespace AdvancedConsole {
 
     // Enumerated type for the control messages sent to the handler routine
-    internal enum CtrlTypes : uint {
+    public enum CtrlTypes : uint {
         CTRL_C_EVENT = 0,
         CTRL_BREAK_EVENT,
         CTRL_CLOSE_EVENT,
