@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace AdvancedConsole {
 
-namespace AdvancedConsole {
     public struct WINDOW_BUFFER_SIZE_RECORD {
         public COORD dwSize;
 

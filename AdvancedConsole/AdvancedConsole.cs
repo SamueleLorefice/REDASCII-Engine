@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 namespace AdvancedConsole {
+
     public class AdvancedConsole {
+
         [DllImport("kernel32", SetLastError = true)]
         private static extern bool AddConsoleAlias(
             string Source,

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace REDASCII_Engine.Graphics {
 
-namespace REDASCII_Engine.Graphics {
     public enum Rotation {
         normal,
         clockwise45,

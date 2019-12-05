@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace AdvancedConsole {
+
     [StructLayout(LayoutKind.Sequential)]
     public struct CONSOLE_HISTORY_INFO {
-        ushort cbSize;
-        ushort HistoryBufferSize;
-        ushort NumberOfHistoryBuffers;
-        uint dwFlags;
+        private ushort cbSize;
+        private ushort HistoryBufferSize;
+        private ushort NumberOfHistoryBuffers;
+        private uint dwFlags;
     }
 }

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace AdvancedConsole {
+
     [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
     public struct KEY_EVENT_RECORD {
 

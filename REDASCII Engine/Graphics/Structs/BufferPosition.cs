@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace REDASCII_Engine.Graphics {
 
-namespace REDASCII_Engine.Graphics {
     public struct BufferPosition {
         public int Top { get; set; }
         public int Left { get; set; }

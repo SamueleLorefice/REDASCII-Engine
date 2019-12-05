@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace AdvancedConsole {
+
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct CONSOLE_FONT_INFO_EX {
         public uint cbSize;

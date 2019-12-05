@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace REDASCII_Engine {
 
-namespace REDASCII_Engine {
     public interface ISystem {
-        public void Run();
-        public void Stop();
 
+        public void Run();
+
+        public void Stop();
     }
 }

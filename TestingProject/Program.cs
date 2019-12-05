@@ -1,9 +1,10 @@
 ﻿using System;
-using AdvancedConsole;
 
 namespace TestingProject {
-    class Program {
-        static void Main(string[] args) {
+
+    internal class Program {
+
+        private static void Main(string[] args) {
             Console.WriteLine("Hello World!");
         }
     }

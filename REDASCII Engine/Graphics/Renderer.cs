@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text;
-using AdvancedConsole;
 
 namespace REDASCII_Engine.Graphics {
-    class Renderer : IRenderer {
+
+    internal class Renderer : IRenderer {
         public int TargetFPS { get; set; }
         public AsciiBuffer[] Buffers { get; set; }
 
         public List<IRenderable> RenderObjects;
 
-        bool IsStopRequested = false;
+        private bool IsStopRequested = false;
 
         public Renderer(int Top, int Left, int Height, int Width) {
-            Buffers = new AsciiBuffer[2] { 
-                new AsciiBuffer(Left, Top, Width, Height),//4 rows spacing 
+            Buffers = new AsciiBuffer[2] {
+                new AsciiBuffer(Left, Top, Width, Height),//4 rows spacing
                 new AsciiBuffer(Left, Top*2, Width, Height)};
             RenderObjects = new List<IRenderable>();
         }
@@ -43,7 +41,7 @@ namespace REDASCII_Engine.Graphics {
             var renderPasses = new Dictionary<ConsoleColor, char[,]>();
             for (int x = 0; x < tempBuffer.GetLength(0); x++) {
                 for (int y = 0; y < tempBuffer.GetLength(1); y++) {
-                    if(renderPasses.ContainsKey(tempBuffer[x, y].Color)){//check if the color of the pixel already have a buffer
+                    if (renderPasses.ContainsKey(tempBuffer[x, y].Color)) {//check if the color of the pixel already have a buffer
                         renderPasses[tempBuffer[x, y].Color][x, y] = tempBuffer[x, y].Data;//add the pixel at the right position
                     } else {
                         renderPasses.Add(tempBuffer[x, y].Color, new char[tempBuffer.GetLength(0), tempBuffer.GetLength(1)]);//add the new buffer
@@ -55,7 +53,7 @@ namespace REDASCII_Engine.Graphics {
             IntPtr handle = Process.GetCurrentProcess().MainWindowHandle;
 
             //https://docs.microsoft.com/en-us/windows/console/writeconsoleoutput
-            
+
             //finally write the buffer, one color at the time:
             foreach (var colorBuffer in renderPasses) {
                 //WriteBufferOutput(handle, colorBuffer.Value, new COORD() { });
@@ -84,7 +82,6 @@ namespace REDASCII_Engine.Graphics {
                 Console.WindowLeft,
                 Console.WindowTop
             );
-
         }
     }
 }

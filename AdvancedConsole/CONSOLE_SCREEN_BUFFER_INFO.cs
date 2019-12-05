@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace AdvancedConsole {
 
-namespace AdvancedConsole {
     public struct CONSOLE_SCREEN_BUFFER_INFO {
         public COORD dwSize;
         public COORD dwCursorPosition;

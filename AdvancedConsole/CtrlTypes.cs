@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace AdvancedConsole {
 
-namespace AdvancedConsole {
     // Enumerated type for the control messages sent to the handler routine
     internal enum CtrlTypes : uint {
         CTRL_C_EVENT = 0,

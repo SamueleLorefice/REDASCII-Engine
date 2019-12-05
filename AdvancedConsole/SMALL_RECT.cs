@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace AdvancedConsole {
 
-namespace AdvancedConsole {
     public struct SMALL_RECT {
         public short Left;
         public short Top;
