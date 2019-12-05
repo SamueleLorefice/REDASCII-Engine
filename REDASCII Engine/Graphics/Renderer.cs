@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using AdvancedConsole;
 
 namespace REDASCII_Engine.Graphics {
     class Renderer : IRenderer {
@@ -19,9 +20,6 @@ namespace REDASCII_Engine.Graphics {
                 new AsciiBuffer(Left, Top*2, Width, Height)};
             RenderObjects = new List<IRenderable>();
         }
-
-        [DllImport("Kernel32.dll", EntryPoint = "WriteConsoleOutputW")]
-        private static extern void WriteBufferOutput(IntPtr consoleOutput, char[,] data, COORD bufferSize, COORD startCoord, out SMALL_RECT WriteRegion);
 
         public void DrawBuffer(int bufferIndex) {
             var bufferPos = Buffers[bufferIndex].BufferPosition;//cache of the buffer position
@@ -60,18 +58,7 @@ namespace REDASCII_Engine.Graphics {
             
             //finally write the buffer, one color at the time:
             foreach (var colorBuffer in renderPasses) {
-                WriteBufferOutput(handle, colorBuffer.Value, new COORD() { });
-                //Console.ForegroundColor = colorBuffer.Key;
-                //for (int y = 0; y < colorBuffer.Value.GetLength(1); y++) {
-                //    string line = "";
-                //    for (int x = 0; x < colorBuffer.Value.GetLength(0); x++) {
-                //        if (colorBuffer.Value[x, y] == '\0') {
-                //            line += " ";
-                //        } else {
-                //            line += colorBuffer.Value[x, y];
-                //        }
-                //    }
-                //}
+                //WriteBufferOutput(handle, colorBuffer.Value, new COORD() { });
             }
         }
 

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "REDASCII Engine", "REDASCII
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedConsole", "AdvancedConsole\AdvancedConsole.csproj", "{99351D39-7154-45C4-A044-CB11E7D3111C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingProject", "TestingProject\TestingProject.csproj", "{AEFF8AEC-F731-4DE1-86D9-329DFBBC7584}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{99351D39-7154-45C4-A044-CB11E7D3111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99351D39-7154-45C4-A044-CB11E7D3111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99351D39-7154-45C4-A044-CB11E7D3111C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEFF8AEC-F731-4DE1-86D9-329DFBBC7584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEFF8AEC-F731-4DE1-86D9-329DFBBC7584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEFF8AEC-F731-4DE1-86D9-329DFBBC7584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEFF8AEC-F731-4DE1-86D9-329DFBBC7584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
