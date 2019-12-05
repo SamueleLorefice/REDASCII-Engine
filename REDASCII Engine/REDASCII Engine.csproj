@@ -13,4 +13,8 @@
     <Folder Include="Input\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdvancedConsole\AdvancedConsole.csproj" />
+  </ItemGroup>
+
 </Project>
