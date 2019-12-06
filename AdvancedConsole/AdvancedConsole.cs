@@ -364,7 +364,7 @@ namespace AdvancedConsole {
         /// <param name="nNumberOfCharsToWrite">Number of characters to write, if the total size of the specified number of characters exceeds the available heap, the function fails with ERROR_NOT_ENOUGH_MEMORY.</param>
         /// <param name="lpNumberOfCharsWritten">Number of characters actually written.</param>
         /// <param name="lpReserved">Reserved; must be IntPtr(0)</param>
-        /// <returns></returns>
+        /// <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero.</returns>
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool WriteConsole(
             IntPtr hConsoleOutput,
@@ -374,6 +374,14 @@ namespace AdvancedConsole {
             IntPtr lpReserved
             );
 
+        /// <summary>
+        /// Writes data directly to the console input buffer. NOTE: Won't be using this, and won't test it. You are welcome to send a pull request if you want this method and related structs to have documentation.
+        /// </summary>
+        /// <param name="hConsoleInput">A handle to the console input buffer. The handle must have the GENERIC_WRITE access right.</param>
+        /// <param name="lpBuffer">Array of <see cref="INPUT_RECORD"/> structures that contain data to be written to the input buffer</param>
+        /// <param name="nLength">The number of input records to be written.</param>
+        /// <param name="lpNumberOfEventsWritten">Variable that receives the number of input records actually written.</param>
+        /// <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero.</returns>
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool WriteConsoleInput(
             IntPtr hConsoleInput,
@@ -382,10 +390,19 @@ namespace AdvancedConsole {
             out uint lpNumberOfEventsWritten
             );
 
+        /// <summary>
+        /// Writes character and color attribute data to a specified rectangular block of character cells in a console screen buffer. The data to be written is taken from a correspondingly sized rectangular block at a specified location in the source buffer.
+        /// </summary>
+        /// <param name="hConsoleOutput">A handle to the console screen buffer. The handle must have the GENERIC_WRITE access right.</param>
+        /// <param name="lpBuffer">The data to be written to the console screen buffer.</param>
+        /// <param name="dwBufferSize">The size of the buffer pointed to by the lpBuffer parameter.</param>
+        /// <param name="dwBufferCoord">The coordinates of the upper-left cell in the buffer pointed to by the lpBuffer parameter.</param>
+        /// <param name="lpWriteRegion">On input, the structure members specify the upper-left and lower-right coordinates of the console screen buffer rectangle to write to. On output, the structure members specify the actual rectangle that was used.</param>
+        /// <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero.</returns>
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool WriteConsoleOutput(
             IntPtr hConsoleOutput,
-            CHAR_INFO[] lpBuffer,
+            CHAR_INFO[,] lpBuffer,
             COORD dwBufferSize,
             COORD dwBufferCoord,
             ref SMALL_RECT lpWriteRegion

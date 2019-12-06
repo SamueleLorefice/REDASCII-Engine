@@ -10,12 +10,12 @@ namespace AdvancedConsole {
     public struct CHAR_INFO {
 
         [FieldOffset(0)]
-        private char UnicodeChar;
+        public char UnicodeChar;
 
         [FieldOffset(0)]
-        private char AsciiChar;
+        public char AsciiChar;
 
         [FieldOffset(2)] //2 bytes seems to work properly
-        private UInt16 Attributes;
+        public UInt16 Attributes;
     }
 }
